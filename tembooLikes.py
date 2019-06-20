@@ -42,8 +42,7 @@ print("Total Likes: " + str(mostRecent["data"][0]["likes"]["count"]))
 
 print("********************")
 
-# Get an InputSet object for the Choreo
-
+#serial set up and send/recieve 
 arduino = serial.Serial(ttyAddress, 19200, timeout=.1)
 time.sleep(5) #give the connection a second to settle
 arduino.write("<IG," + str(mostRecent["data"][0]["likes"]["count"]) + ">")
